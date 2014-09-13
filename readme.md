@@ -5,11 +5,14 @@ A thorough bash configuration file meant to replace the local `~/.bashrc`.  It h
 * Basic expected functionality
 * Bash history improvements
 * Colored command prompt
+* Script directory: `~/.local/bin`
 * `ls` and `grep` coloring
 * `ls` navigational aliases: `lsd`, `lsl`, `lss`, `lsx`: date, long, size, ext.
 * `cd` navigational aliases: `..`, `...`, `....`
 * `rm` and `cp` file protection
-* `abacus`, a command line calculator
+* `treeless`: directory tree view in pager
+* `tarlist`: archive content list
+* `abacus`: a command line calculator
 
 ### Usage
 

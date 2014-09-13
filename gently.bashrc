@@ -65,7 +65,7 @@ alias lsd='ls -lAtrh'                                # sort by date
 alias lsl='ls -lAh'                                  # long list, human-readabl
 alias lss='ls -shAxSr'                               # sort by size
 alias lsx='ls -lAhX'                                 # sort by extension
-alias treeview='tree -C | less -R'                   # tree directory w/ pager
+alias treeless='tree -C | less -R'                   # directory tree in pager
 
 alias   ..="cd .."                                   # Directories
 alias  ...='cd ../..'
@@ -80,6 +80,7 @@ alias cp="cp -ai"                                    # cp interactive if exists
 alias iotop="sudo iotop"
 alias pn="ping -c2 archlinux.org"
 alias rm="rm -i"                                     # remove interactively
+alias tarlist="bsdtar -tvf"                          # archive list contents
 alias v="vim"
 alias vi="vim"
 alias sv="sudo vim"

@@ -42,7 +42,7 @@ if [[ ${TERM} == "xterm" ]]; then           # manpage coloring for less
   export LESS_TERMCAP_mb=$'\e[01;31m'       # begin blinking - unused?   (red)
   export LESS_TERMCAP_ue=$'\e[0m'           # end underline
   export LESS_TERMCAP_se=$'\e[0m'           # end standout-mode
-  export LESS_TERMCAP_me=$'\e[0m'           # end all mode   - txt rest
+  export LESS_TERMCAP_me=$'\e[0m'           # end all mode   - txt reset
 else
   export LESS_TERMCAP_md=$'\e[01;34m'
   export LESS_TERMCAP_us=$'\e[01;35m'
@@ -54,7 +54,7 @@ else
 fi
 
 # Paths (additional executable directories)
-scrpt_dir=$HOME/.local/bin                  # local script directory
+scrpt_dir=$HOME/.local/bin                           # local script directory
 export PATH="$scrpt_dir:$PATH"
 
 ## Aliases ##

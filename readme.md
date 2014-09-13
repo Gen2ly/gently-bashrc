@@ -13,4 +13,4 @@ A thorough bash configuration file meant to replace the local `~/.bashrc`.  It h
 
 ### Usage
 
-Remove the local bashrc (`~/.bashrc`), then logout and login for changes to take effect.
+Add `source /usr/share/doc/gently-bashrc/gently.bashrc` to `/etc/bash.bashrc`, then remove the local bashrc (`~/.bashrc`).

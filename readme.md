@@ -13,4 +13,4 @@ A thorough bash configuration file meant to replace the local `~/.bashrc`.  It h
 
 ### Usage
 
-Remove local bashrc (`~/.bashrc`), logout and login for changes to take effect.
+Remove the local bashrc (`~/.bashrc`), then logout and login for changes to take effect.

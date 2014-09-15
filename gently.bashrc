@@ -55,10 +55,7 @@ fi
 
 ## Environment ##
 
-[ "$XDG_CACHE_HOME" ]  || export XDG_CACHE_HOME="$HOME/.cache"
-[ "$XDG_CONFIG_HOME" ] || export XDG_CONFIG_HOME="$HOME/.config"
-[ "$XDG_DATA_HOME" ]   || export XDG_DATA_HOME="$HOME/.local/share"
-[ "$INPUTRC" ]         || export INPUTRC="${XDG_CONFIG_HOME}/readline/inputrc"
+export INPUTRC="$HOME/readline/inputrc"
 scrpt_dir=$HOME/.local/bin                           # local script directory
 export PATH="$scrpt_dir:$PATH"
 
@@ -83,6 +80,7 @@ alias cdt="cd ~/.local/share/Trash/files/"
 alias chx="chmod +x"                                 # Other
 alias cp="cp -ai"                                    # cp interactive if exists
 alias iotop="sudo iotop"
+alias mv="mv -i"                                     # mv interactive if exists
 alias pn="ping -c2 archlinux.org"
 alias rm="rm -i"                                     # remove interactively
 alias tarlist="bsdtar -tvf"                          # archive list contents

@@ -55,7 +55,7 @@ fi
 
 ## Environment ##
 
-export INPUTRC="$HOME/readline/inputrc"
+export INPUTRC="$HOME/.config/readline/inputrc"
 scrpt_dir=$HOME/.local/bin                           # local script directory
 export PATH="$scrpt_dir:$PATH"
 

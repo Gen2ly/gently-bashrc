@@ -91,9 +91,9 @@ alias sv="sudo vim"
 
 abacus () { awk "BEGIN { print $* ; }"; }
 #abacus () { echo "scale=4;$@" | bc -l ; }
-pb () { if curl -Is https://www.archlinux.org -o /tmp/url-head; then
-          echo "Network is connected."; else ;
-          echo "Network non-detected." ; fi ; }
+pb () {   if curl -Is https://www.archlinux.org -o /tmp/url-head; then
+             echo "Network is connected."
+        else echo "Network non-detected." ; fi ; }
 pdfcat () {
   gs -q -sPAPERSIZE=letter -dNOPAUSE -dBATCH -sDEVICE=pdfwrite \
   -sOutputFile=concatenated.pdf "$@" ;}

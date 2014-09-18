@@ -81,7 +81,6 @@ alias chx="chmod +x"                                 # Other
 alias cp="cp -ai"                                    # cp interactive if exists
 alias iotop="sudo iotop"
 alias mv="mv -i"                                     # mv interactive if exists
-alias pn="ping -c2 archlinux.org"
 alias rm="rm -i"                                     # remove interactively
 alias tarlist="bsdtar -tvf"                          # archive list contents
 alias v="vim"
@@ -92,6 +91,9 @@ alias sv="sudo vim"
 
 abacus () { awk "BEGIN { print $* ; }"; }
 #abacus () { echo "scale=4;$@" | bc -l ; }
+pb () { if curl -Is https://www.archlinux.org -o /tmp/url-head; then
+          echo "Network is connected."; else ;
+          echo "Network non-detected." ; fi ; }
 pdfcat () {
   gs -q -sPAPERSIZE=letter -dNOPAUSE -dBATCH -sDEVICE=pdfwrite \
   -sOutputFile=concatenated.pdf "$@" ;}

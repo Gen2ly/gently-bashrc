@@ -89,13 +89,16 @@ alias ebash="sv /usr/share/doc/gently-bashrc/gently.bashrc"
 
 ## Functions ##
 
-abacus   () { awk "BEGIN { print $* ; }"; }
-#abacus   () { echo "scale=4;$@" | bc -l ; }
-pb       () { if curl -Is https://www.archlinux.org -o /tmp/url-head; then
-                   echo "Network is connected."
-              else echo "Network unavailable"; fi ; }
-treeless () { if [ $# -eq 0]; then dir="."
-              else                 dir="$1"; fi
+abacus () { awk "BEGIN { print $* ; }"; }
+#abacus () { echo "scale=4;$@" | bc -l ; }
+pb     () { if curl -Is https://www.archlinux.org -o /tmp/url-head; then
+              echo "Network is connected."
+            else echo "Network unavailable"; fi ; }
+treeless () { if [ $# -gt 0 ]; then
+                dir=$(realpath "$1")
+              else
+                dir=$(realpath $PWD)
+              fi
               tree -C "$dir" | less -R ; }
 
 ## Bash-completion ##

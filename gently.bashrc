@@ -86,7 +86,7 @@ alias tarlist="bsdtar -tvf"                          # archive list contents
 alias v="vim"
 alias vi="vim"
 alias sv="sudo vim"
-alias ebash"sv /usr/share/doc/gently-bashrc/gently.bashrc"
+alias ebash="sv /usr/share/doc/gently-bashrc/gently.bashrc"
 
 ## Functions ##
 

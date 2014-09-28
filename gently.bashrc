@@ -67,7 +67,6 @@ alias lsd='ls -lAtrh'                                # sort by date
 alias lsl='ls -lAh'                                  # long list, human-readabl
 alias lss='ls -shAxSr'                               # sort by size
 alias lsx='ls -lAhX'                                 # sort by extension
-alias treeless='tree -C | less -R'                   # directory tree in pager
 
 alias   ..="cd .."                                   # Directories
 alias  ...='cd ../..'
@@ -90,14 +89,14 @@ alias ebash="sv /usr/share/doc/gently-bashrc/gently.bashrc"
 
 ## Functions ##
 
-abacus () { awk "BEGIN { print $* ; }"; }
-#abacus () { echo "scale=4;$@" | bc -l ; }
-pb () {   if curl -Is https://www.archlinux.org -o /tmp/url-head; then
-             echo "Network is connected."
-        else echo "Network non-detected." ; fi ; }
-pdfcat () {
-  gs -q -sPAPERSIZE=letter -dNOPAUSE -dBATCH -sDEVICE=pdfwrite \
-  -sOutputFile=concatenated.pdf "$@" ;}
+abacus   () { awk "BEGIN { print $* ; }"; }
+#abacus   () { echo "scale=4;$@" | bc -l ; }
+pb       () { if curl -Is https://www.archlinux.org -o /tmp/url-head; then
+                   echo "Network is connected."
+              else echo "Network unavailable"; fi ; }
+treeless () { if [ $# -eq 0]; then dir="."
+              else                 dir="$1"; fi
+              tree -C "$dir" | less -R ; }
 
 ## Bash-completion ##
 

@@ -88,6 +88,7 @@ alias vi="vim"
 alias sv="sudo vim"
 
 alias ebash="sv /usr/share/doc/gently-bashrc/gently.bashrc"
+alias sbash="source /usr/share/doc/gently-bashrc/gently.bashrc"
 
 ## Functions ##
 

@@ -79,21 +79,23 @@ alias cdt="cd ~/.local/share/Trash/files/"
 alias chx="chmod +x"                                 # Other
 alias cp="cp -ai"                                    # cp interactive if exists
 alias iotop="sudo iotop"
+alias mountlist="mount | column -t -o " " | sort -uV"
 alias mv="mv -i"                                     # mv interactive if exists
 alias rm="rm -i"                                     # remove interactively
 alias tarlist="bsdtar -tvf"                          # archive list contents
 alias v="vim"
 alias vi="vim"
 alias sv="sudo vim"
+
 alias ebash="sv /usr/share/doc/gently-bashrc/gently.bashrc"
 
 ## Functions ##
 
-abacus () { awk "BEGIN { print $* ; }"; }
 #abacus () { echo "scale=4;$@" | bc -l ; }
-pb     () { if curl -Is https://www.archlinux.org -o /tmp/url-head; then
+abacus   () { awk "BEGIN { print $* ; }"; }
+pb       () { if curl -Is https://www.archlinux.org -o /tmp/url-head; then
               echo "Network is connected."
-            else echo "Network unavailable"; fi ; }
+            else echo "Network unavailable."; fi ; }
 treeless () { if [ $# -gt 0 ]; then
                 dir=$(realpath "$1")
               else

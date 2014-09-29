@@ -93,16 +93,18 @@ alias sbash="source /usr/share/doc/gently-bashrc/gently.bashrc"
 
 #abacus () { echo "scale=4;$@" | bc -l ; }
 abacus    () { awk "BEGIN { print $* ; }"; }
-mountlist () { mount | column -t -o " " | sort -uV ; }
+mountlist () { mount | awk '{ print $1" "$3" "$5" "$6 }' | sort -uV | \
+                 column -t -o " " ; }
 pb        () { if curl -Is https://www.archlinux.org -o /tmp/url-head; then
-              echo "Network is connected."
-            else echo "Network unavailable."; fi ; }
+                 echo "Network is connected."
+               else
+                 echo "Network unavailable."; fi ; }
 treeless  () { if [ $# -gt 0 ]; then
-                dir=$(realpath "$1")
-              else
-                dir=$(realpath $PWD)
-              fi
-              tree -C "$dir" | less -R ; }
+                 dir=$(realpath "$1")
+               else
+                 dir=$(realpath $PWD)
+               fi
+               tree -C "$dir" | less -R ; }
 
 ## Bash-completion ##
 

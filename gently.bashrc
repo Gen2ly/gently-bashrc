@@ -112,6 +112,7 @@ complete -cf bgcmd
 complete -W "`awk '{ print $2 }' /etc/hosts`" ssh
 complete -cf sudo
 bashcompfiles=(/usr/share/bash-completion/completions/burp
+               /usr/share/bash-completion/completions/systemctl
                /usr/share/doc/pkgfile/command-not-found.bash
                /usr/share/git/completion/git-completion.bash)
 for file in ${bashcompfiles[@]}; do

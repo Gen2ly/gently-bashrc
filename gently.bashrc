@@ -61,12 +61,12 @@ export PATH="$scrpt_dir:$PATH"
 
 ## Aliases ##
 
-alias ls="LC_COLLATE="C" ls --color=auto --group-directories-first" # Lists
-alias ls1="LC_COLLATE="C" ls -1"                     # sort by line
+alias ls="ls --color=auto --group-directories-first" # Lists
+alias ls1="ls -1"                                    # sort by line
 alias lsd="ls -lAtrh"                                # sort by date
-alias lsl="LC_COLLATE="C" ls -lAh"                   # long list, human-readable
+alias lsl="ls -lAh"                                  # long list, human-readable
 alias lss="ls -shAxSr"                               # sort by size
-alias lsx="LC_COLLATE="C" ls -lAhX"                  # sort by extension
+alias lsx="ls -lAhX"                                 # sort by extension
 
 alias   ..="cd .."                                   # Directories
 alias  ...="cd ../.."

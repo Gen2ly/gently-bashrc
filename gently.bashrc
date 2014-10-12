@@ -56,7 +56,7 @@ fi
 ## Environment ##
 
 export INPUTRC="$HOME/.config/readline/inputrc"
-scrpt_dir=$HOME/.local/bin                           # local script directory
+scrpt_dir=$HOME/.local/bin                           # Local script directory
 export PATH="$scrpt_dir:$PATH"
 
 ## Aliases ##
@@ -76,7 +76,8 @@ alias cdp="cd ~/.local/abs/"
 alias cds="cd $scrpt_dir"
 alias cdt="cd ~/.local/share/Trash/files/"
 
-alias chx="chmod +x"                                 # Other
+alias c="clear"                                      # Other
+alias chx="chmod +x"
 alias cp="cp -ai"                                    # cp interactive if exists
 alias iotop="sudo iotop"
 alias mv="mv -ni"                                    # mv interactive if exists
@@ -98,7 +99,8 @@ mountlist () { mount | awk '{ print $1" "$3" "$5" "$6 }' | sort -uV | \
 pb        () { if curl -Is https://www.archlinux.org -o /tmp/url-head; then
                  echo "Network is connected."
                else
-                 echo "Network unavailable."; fi ; }
+                 echo "Network unavailable.";
+               fi; }
 treeless  () { if [ $# -gt 0 ]; then
                  dir=$(realpath "$1")
                else

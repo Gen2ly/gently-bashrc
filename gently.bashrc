@@ -106,7 +106,7 @@ treeless  () { if [ $# -gt 0 ]; then
                else
                  dir=$(realpath $PWD)
                fi
-               tree -C "$dir" | less -R ; }
+               tree -C -a "$dir" | less -R ; }
 
 ## Bash-completion ##
 

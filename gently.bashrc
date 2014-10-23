@@ -38,7 +38,7 @@ if [[ ${TERM} == "xterm" ]]; then           # manpage coloring for less
   export LESS_TERMCAP_mb=$'\e[1;31m'        # red
   export LESS_TERMCAP_md=$'\e[01;38;5;12m'  # bold mode      - main      (blue)
   export LESS_TERMCAP_us=$'\e[38;5;13m'     # underline mode - second    (purp)
-  export LESS_TERMCAP_so=$'\e[38;5;06m'     # standout-mode  - info/find (cyan)
+  export LESS_TERMCAP_so=$'\e[01;38;5;08m'  # standout-mode  - info/find (blck)
   export LESS_TERMCAP_mb=$'\e[01;31m'       # begin blinking - unused?   (red)
   export LESS_TERMCAP_ue=$'\e[0m'           # end underline
   export LESS_TERMCAP_se=$'\e[0m'           # end standout-mode

@@ -1,17 +1,18 @@
-## General settings ##
-
+## General settings
 shopt -s checkwinsize # fix line wrap on window resize
 shopt -s cdspell      # correct "cd" misspelling
 set -o noclobber      # prevent overwritting of file with > (use >| to override)
 #shopt -s hostcomplete # hostname expansion
 #shopt -s extglob      # extended pattern matching features
 
-HISTSIZE=5000                               # historyopts: http://git.io/Y18IYA
+## History: http://git.io/Y18IYA
+HISTSIZE=5000
 HISTFILESIZE=20000
 HISTCONTROL=erasedups
 shopt -s histappend
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
+## Prompt
 set_prompt_style () {                       # Command prompt
   local bldblk='\e[1;30m'                   # bold black
   local bldred='\e[1;31m'                   # bold red
@@ -30,6 +31,7 @@ set_prompt_style () {                       # Command prompt
   PS1="${bashusr}${bashhst} ${bashdir}${bashprt}"
 } ; set_prompt_style
 
+## Colors
 eval $(dircolors -b)                        # coloring for ls and grep
 alias grep='grep --color=auto'
 export GREP_COLOR="1;35"                    # purple
@@ -53,14 +55,12 @@ else
   export LESS_TERMCAP_me=$'\e[0m'
 fi
 
-## Environment ##
-
+## Environment
 export INPUTRC="$HOME/.config/readline/inputrc"
 scrpt_dir=$HOME/.local/bin                           # Local script directory
 export PATH="$scrpt_dir:$PATH"
 
-## Aliases ##
-
+## Aliases
 alias ls="ls --color=auto --group-directories-first" # Lists
 alias ls1="ls -1"                                    # sort by line
 alias lsd="ls -lAtrh"                                # sort by date
@@ -90,35 +90,35 @@ alias sv="sudo vim"
 alias ebash="sv /usr/share/doc/gently-bashrc/gently.bashrc"
 alias sbash="source /usr/share/doc/gently-bashrc/gently.bashrc"
 
-## Functions ##
-
-#abacus () { echo "scale=4;$@" | bc -l ; }
-abacus    () { awk "BEGIN { print $* ; }"; }
-mountlist () { mount | awk '{ print $1" "$3" "$5" "$6 }' | sort -uV | \
-                 column -t -o " " ; }
-pb        () { if curl -Is https://www.archlinux.org -o /tmp/url-head; then
-                 echo "Network is connected."
-               else
-                 echo "Network unavailable.";
-               fi; }
-treeless  () { if [ $# -gt 0 ]; then
-                 dir=$(realpath "$1")
-               else
-                 dir=$(realpath $PWD)
-               fi
-               tree -C -a "$dir" | less -R ; }
-
-## Bash-completion ##
-
+## Bash completion
 complete -cf bgcmd
 complete -W "`awk '{ print $2 }' /etc/hosts`" ssh
 complete -cf sudo
+
 bashcompfiles=(/usr/share/bash-completion/completions/burp
                /usr/share/bash-completion/completions/dkms
                /usr/share/bash-completion/completions/systemctl
                /usr/share/doc/pkgfile/command-not-found.bash
                /usr/share/git/completion/git-completion.bash)
 for file in ${bashcompfiles[@]}; do
-  [ -f "$file" ] && source "$file"; done
+  [ -f "$file" ] && source "$file"
+done
+
+## Functions ##
+abacus    () { awk "BEGIN { print $* ; }" ; }
+g         () { nohup gedit "$@" &> /dev/null & }
+mountlist () { mount | awk '{ print $1" "$3" "$5" "$6 }' | sort -uV | \
+                 column -t -o " " ; }
+pb        () { if curl -Is https://www.archlinux.org -o /tmp/url-head; then
+                 echo "Network is connected."
+               else
+                 echo "Network unavailable."
+               fi ; }
+treeless  () { if [ $# -gt 0 ]; then
+                 dir=$(realpath "$1")
+               else
+                 dir=$(realpath $PWD)
+               fi
+               tree -C -a "$dir" | less -R ; }
 
 # vim:set ft=sh ts=2 sw=2 et:

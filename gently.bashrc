@@ -4,6 +4,7 @@ shopt -s cdspell      # correct "cd" misspelling
 set -o noclobber      # prevent overwritting of file with > (use >| to override)
 #shopt -s hostcomplete # hostname expansion
 #shopt -s extglob      # extended pattern matching features
+source /etc/profile.d/vte.sh  # adopt current working directory in new terms.
 
 ## History: http://git.io/Y18IYA
 HISTSIZE=5000

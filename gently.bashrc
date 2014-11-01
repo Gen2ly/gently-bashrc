@@ -38,22 +38,21 @@ alias grep='grep --color=auto'
 export GREP_COLOR="1;35"                    # purple
 
 if [[ ${TERM} == "xterm" ]]; then           # manpage coloring for less
-  export LESS_TERMCAP_mb=$'\e[1;31m'        # red
-  export LESS_TERMCAP_md=$'\e[01;38;5;12m'  # bold mode      - main      (blue)
-  export LESS_TERMCAP_us=$'\e[38;5;13m'     # underline mode - second    (purp)
-  export LESS_TERMCAP_so=$'\e[01;38;5;08m'  # standout-mode  - info/find (blck)
-  export LESS_TERMCAP_mb=$'\e[01;31m'       # begin blinking - unused?   (red)
-  export LESS_TERMCAP_ue=$'\e[0m'           # end underline
-  export LESS_TERMCAP_se=$'\e[0m'           # end standout-mode
-  export LESS_TERMCAP_me=$'\e[0m'           # end all mode   - txt reset
+  export LESS_TERMCAP_mb=$'\e[1;31m'        # mode blinking     - unused?! (red)
+  export LESS_TERMCAP_md=$'\e[01;38;5;12m'  # mode double-bright- primary  (blu)
+  export LESS_TERMCAP_so=$'\e[01;38;5;08m'  # mode standout     - infofind (gry)
+  export LESS_TERMCAP_us=$'\e[38;5;13m'     # underline start   - secondary(pur)
+  export LESS_TERMCAP_me=$'\e[0m'           # mode end (reset: mb, md, so, us)
+  export LESS_TERMCAP_se=$'\e[0m'           # standout-mode end
+  export LESS_TERMCAP_ue=$'\e[0m'           # underline end
 else
-  export LESS_TERMCAP_md=$'\e[01;34m'
-  export LESS_TERMCAP_us=$'\e[01;35m'
-  export LESS_TERMCAP_so=$'\e[01;30m'
   export LESS_TERMCAP_mb=$'\e[01;31m'
-  export LESS_TERMCAP_ue=$'\e[0m'
-  export LESS_TERMCAP_se=$'\e[0m'
+  export LESS_TERMCAP_md=$'\e[01;34m'
+  export LESS_TERMCAP_so=$'\e[01;30m'
+  export LESS_TERMCAP_us=$'\e[01;35m'
   export LESS_TERMCAP_me=$'\e[0m'
+  export LESS_TERMCAP_se=$'\e[0m'
+  export LESS_TERMCAP_ue=$'\e[0m'
 fi
 
 ## Environment

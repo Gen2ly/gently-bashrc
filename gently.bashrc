@@ -1,9 +1,10 @@
 ## General settings
+shopt -s autocd       # prepend cd.  Enables entering only path to change dir.
 shopt -s checkwinsize # fix line wrap on window resize
 shopt -s cdspell      # correct "cd" misspelling
-set -o noclobber      # prevent overwritting of file with > (use >| to override)
-#shopt -s hostcomplete # hostname expansion
 #shopt -s extglob      # extended pattern matching features
+#shopt -s hostcomplete # hostname expansion
+set -o noclobber      # prevent overwritting of file with > (use >| to override)
 source /etc/profile.d/vte.sh  # adopt current working directory in new terms.
 
 ## History: http://git.io/Y18IYA
@@ -37,10 +38,10 @@ eval $(dircolors -b)                        # coloring for ls and grep
 alias grep='grep --color=auto'
 export GREP_COLOR="1;35"                    # purple
 
-if [[ ${TERM} == "xterm" ]]; then           # manpage coloring for less
+if [[ ${TERM} == "xterm" ]]; then           # manpage colors with less pager
   export LESS_TERMCAP_mb=$'\e[1;31m'        # mode blinking     - unused?! (red)
   export LESS_TERMCAP_md=$'\e[01;38;5;12m'  # mode double-bright- primary  (blu)
-  export LESS_TERMCAP_so=$'\e[01;38;5;08m'  # mode standout     - infofind (gry)
+  export LESS_TERMCAP_so=$'\e[01;38;5;08m'  # mode standout     - info/find(gry)
   export LESS_TERMCAP_us=$'\e[38;5;13m'     # underline start   - secondary(pur)
   export LESS_TERMCAP_me=$'\e[0m'           # mode end (reset: mb, md, so, us)
   export LESS_TERMCAP_se=$'\e[0m'           # standout-mode end

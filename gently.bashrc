@@ -1,11 +1,13 @@
 ## General settings
-shopt -s autocd       # prepend cd.  Enables entering only path to change dir.
-shopt -s checkwinsize # fix line wrap on window resize
-shopt -s cdspell      # correct "cd" misspelling
+shopt -s autocd       # prepend cd, enables entering path only to change dir.
+shopt -s checkwinsize # window size monitor to adjust line wrappings
+shopt -s cdspell      # fix cd directory misspellings
 #shopt -s extglob      # extended pattern matching features
 #shopt -s hostcomplete # hostname expansion
-set -o noclobber      # prevent overwritting of file with > (use >| to override)
 source /etc/profile.d/vte.sh  # adopt current working directory in new terms.
+
+# prevent redirection overwrites (use >| to force)
+set -o noclobber
 
 ## History: http://git.io/Y18IYA
 HISTSIZE=5000
@@ -69,12 +71,9 @@ alias lsl="ls -lAh"                                  # long list, human-readable
 alias lss="ls -shAxSr"                               # sort by size
 alias lsx="ls -lAhX"                                 # sort by extension
 
-alias   ..="cd .."                                   # Directories
-alias  ...="cd ../.."
-alias ....="cd ../../.."
+alias cda="cd ~/.local/abs/"                         # Directory shortcuts
+alias cdb="cd $scrpt_dir"
 alias cdd="cd ~/Desktop/"
-alias cdp="cd ~/.local/abs/"
-alias cds="cd $scrpt_dir"
 alias cdt="cd ~/.local/share/Trash/files/"
 
 alias c="clear"                                      # Other

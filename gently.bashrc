@@ -34,6 +34,9 @@ set_prompt_style () {                       # Command prompt
   fi
   PS1="${bashusr}${bashhst} ${bashdir}${bashprt}"
 } ; set_prompt_style
+# Cursor color (man colors` for values)
+#echo -en "\e]12;grey40\a"
+echo -en "\e]12;forest green\a"
 
 ## Colors
 eval $(dircolors -b)                        # coloring for ls and grep
@@ -59,7 +62,6 @@ else
 fi
 
 ## Environment
-export INPUTRC="$HOME/.config/readline/inputrc"
 scrpt_dir=$HOME/.local/bin                           # Local script directory
 export PATH="$scrpt_dir:$PATH"
 
